@@ -1,0 +1,373 @@
+/* styles.css */
+
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f7ff; /* Light blue background color */
+    color: #1a1a1a; /* Dark text color */
+}
+
+/* Header styles */
+header {
+    background: linear-gradient(to bottom, #023e8a, #001845);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s ease infinite; /* Adding gradient animation */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Making the header text slide-in and fade-in on hover */
+header h1 {
+    font-size: 48px;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+    opacity: 0; /* Hide initially for the fade-in effect */
+    transform: translateY(-30px); /* Move up initially for the slide-in effect */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+header:hover h1 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Navigation styles */
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #023e8a; /* Dark blue heading color */
+}
+
+section div {
+    display: flex;
+    align-items: center;
+}
+
+.animated-profile {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.animated-profile:hover img {
+    transform: scale(1.1);
+}
+
+section img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    opacity: 0; /* Hide initially for the fade-in effect */
+    transform: translateY(20px); /* Move down initially for the slide-in effect */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section:hover img {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section p {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+/* About Me section styles */
+#about-me {
+    background-color: #f9f9f9; /* Light gray background color */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* Accounts section styles */
+#accounts {
+    background-color: #fff; /* White background color */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+#accounts div {
+    display: flex;
+    justify-content: center;
+}
+
+#accounts a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #0077b6; /* Dark blue button background color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    margin: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    animation: float 3s ease infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+#accounts a:hover {
+    background-color: #05a3dd; /* Lighter blue button background color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#accounts a.youtube {
+    background-color: #ff0000; /* Red YouTube button background color */
+}
+
+#accounts a.youtube:hover {
+    background-color: #cc0000;
+}
+
+/* Footer styles */
+footer {
+    background-color: #023e8a; /* Dark blue footer background color */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 5px 0;
+    animation: blink 2s linear infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Add some custom CSS styles to make the website more unique and rich */
+/* You can add more custom styles as desired */
+
+/* Styling for the profile picture in the About Me section */
+#about-me .animated-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling for the social media icons in the Accounts section */
+#accounts div {
+    display: flex;
+    justify-content: center;
+}
+
+#accounts a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #16a085; /* Green button background color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    margin: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#accounts a::before {
+    content: '';
+    position: absolute;
+    top: -110%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: skewY(-30deg) translateX(-150%);
+    transition: transform 0.5s ease;
+}
+
+#accounts a:hover::before {
+    transform: skewY(-30deg) translateX(150%);
+}
+
+#accounts a:hover {
+    background-color: #1abc9c; /* Lighter green button background color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#accounts a.youtube {
+    background-color: #e74c3c; /* Red YouTube button background color */
+}
+
+
+
+#accounts a.youtube::before {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#accounts a.youtube:hover {
+    background-color: #c0392b;
+}
+
+/* Contact section styles */
+#contact {
+    background-color: #27ae60;
+    color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    background-image: linear-gradient(45deg, #27ae60, #16a085, #27ae60); /* Gradient background */
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+#contact h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 12px 24px;
+    background-color: #2ecc71; /* Light green button background color */
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background: #2ecc71; /* Fallback color */
+    background-image: linear-gradient(to right, #1abc9c, #2ecc71); /* Gradient background */
+    border: 2px solid transparent; /* Hide default border */
+    background-clip: padding-box;
+}
+
+.contact-form button:hover {
+    background-color: #27ae60; /* Darker green button background color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-image: linear-gradient(to right, #1abc9c, #2ecc71); /* Gradient border on hover */
+    border-image-slice: 1;
+}
+
+/* Custom animations */
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in {
+    animation: slide-in 1s ease;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spin {
+    animation: spin 2s linear infinite;
+}
+
+/* Your custom styles go here */
+/* ... */
